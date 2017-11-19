@@ -65,6 +65,16 @@ fun getStringLength(obj: Any): Int? {
     }
     return null
 }
+
+// When
+fun describe(obj: Any): String =
+        when (obj) {
+            1            -> "One"
+            "Hello"      -> "Greeting"
+            is Long      -> "Long"
+            !is String   -> "Not a string"
+            else         -> "Unknown"
+        }
 fun main(args: Array<String>)
 {
     // println("Hello Aliens")
@@ -77,4 +87,70 @@ fun main(args: Array<String>)
     println(printProduct("10", "2"))
     var name = "Nazmul"
     println(name + " length: " + getStringLength(name))
+
+    // For Loop
+
+    val items = listOf("apple", "banana", "kiwi")
+    for (item in items){
+        println(item)
+    }
+
+
+    //ANother for loop
+    val items1 = listOf("apple", "banana", "kiwi")
+    for (index in items1.indices) {  // indices get index list
+        println("item at $index is ${items1[index]}")
+    }
+
+
+    //While loop
+    val items2 = listOf("apple", "banana", "kiwi")
+    var index = 0
+    while (index < items2.size) {
+        println("item at $index is ${items2[index]}")
+        index++
+    }
+    println(describe(1))
+
+    //Check whith in a Range
+    val x = 10
+    val y = 9
+    if (x in 1..y+1) {
+        println("fits in range")
+    }
+    // In Array
+    val list = listOf("a", "b", "c")
+    if (-1 !in 0..list.lastIndex) {
+        println("-1 is out of range")
+    }
+    //println("${list.size}  ${list.indices}")
+    if (list.size !in list.indices) {
+        println("list size is out of valid list indices range too")
+    }
+
+    //Iteration
+    for (x in 1..5) {
+        print(x)
+
+    }
+    println()
+    println("over a progression: print after every 2 step")
+    //or over a progression:
+    for (x in 1..10 step 2) {
+        print(x)
+    }
+    println()
+    println("Run in Reverse Order: print after every 3 step")
+    for (x in 9 downTo 0 step 3) {
+        print(x)
+    }
+
+
+    println()
+
+    when {
+        "orange" in items -> println("juicy")
+        "apple" in items -> println("apple is fine too")
+    }
+
 }
