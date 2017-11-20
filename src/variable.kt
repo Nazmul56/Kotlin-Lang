@@ -1,3 +1,5 @@
+import java.awt.Rectangle
+
 val a: Int = 1 // immediate assignment
 
 val b = 2 // Int type is inferred
@@ -75,6 +77,11 @@ fun describe(obj: Any): String =
             !is String   -> "Not a string"
             else         -> "Unknown"
         }
+
+fun foo(a: Int = 0, b: String = " ") {
+
+    println(a )
+}
 fun main(args: Array<String>)
 {
     // println("Hello Aliens")
@@ -152,5 +159,14 @@ fun main(args: Array<String>)
         "orange" in items -> println("juicy")
         "apple" in items -> println("apple is fine too")
     }
+
+  //  val rectangle = Rectangle(5.0, 2.0) //no 'new' keyword required
+   // val triangle = Triangle(3.0, 4.0, 5.0)
+
+    data class Customer(val name: String, val email: String)
+    foo()
+
+//
+
 
 }
