@@ -82,6 +82,35 @@ fun foo(a: Int = 0, b: String = " ") {
 
     println(a )
 }
+
+fun transform(color: String): Int {
+    return when (color) {
+        "Red" -> 0
+        "Green" -> 1
+        "Blue" -> 2
+        else -> throw IllegalArgumentException("Invalid color param value")
+    }
+}
+
+fun test(color: String) {
+    val result =
+            try {
+        transform(color)
+    } catch (e: IllegalArgumentException) {
+       // throw IllegalStateException(e)
+
+        println("Catch ")
+    }
+// Working with result
+}
+
+class Turtle {
+    fun penDown() {}
+    fun penUp() {}
+    fun turn(degrees: Double) {}
+    fun forward(pixels: Double) {}
+}
+
 fun main(args: Array<String>)
 {
     // println("Hello Aliens")
@@ -166,6 +195,22 @@ fun main(args: Array<String>)
     data class Customer(val name: String, val email: String)
     foo()
 
+    //Illegal Argument Exception
+    print("Illegal Argument Exception: ")
+    //println( )
+    // try catch
+    test("dafsd")
+
+
+    val myTurtle = Turtle()
+    with(myTurtle) { //draw a 100 pix square
+        penDown()
+        for(i in 1..4) {
+            forward(100.0)
+            turn(90.0)
+        }
+        penUp()
+    }
 //
 
 
